@@ -22,7 +22,7 @@
             <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title"><a href="" class="btn btn-md btn-outline-success" data-toggle="modal" data-target="#modal-default"> Tambah Menu List <i class="fas fa-plus"></i></a></h3>
+                <h3 class="card-title"><a href="<?= base_url('meja/add')?>" class="btn btn-md btn-success" > Tambah Meja <i class="fas fa-plus"></i></a></h3>
               </div>
               <div class="card-body table-responsive p-6">
                 <table id="example" class="table table-striped table-bordered" style="width:100%">
@@ -70,47 +70,3 @@
       </section>
     </section>
   </div>
-
-
-  <div class="modal fade" id="modal-default">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Tambah Meja</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-               <form role="form" method="POST" action="<?= base_url('/menu'); ?>">
-                <div class="card-body">
-                  <div class="form-group">
-                    <label for="">Nama Menu</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Menu" name="nama">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Harga</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Harga" name="harga">
-                  </div>
-                  <?php $getJenis = $this->db->query('SELECT * FROM jenis_tb')->result_array();?>
-                 <div class="form-group">
-                   <label>Jenis Menu</label>
-                    <select class="form-control" name="jenis_id">
-                      <?php foreach ($getJenis as $key => $jenis) {?>
-                      <option value="<?= $jenis['id']?>"> <?= $jenis['jenis']?></option>
-                      <?php } ?>
-                    </select>
-                 </div>
-                </div>
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Simpan</button>
-            </div>
-          </form>
-          </div>
-          <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-      </div>
-      <!-- /.modal -->

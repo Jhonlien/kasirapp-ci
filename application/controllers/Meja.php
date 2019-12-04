@@ -31,4 +31,18 @@ class Meja extends CI_Controller {
 		$this->load->view('admin/content/meja/meja', $data);
 		$this->load->view('template/footer');
 	}
+
+	public function add(){
+		$lastCheck = "SELECT no_meja FROM meja_tb ORDER BY id DESC LIMIT 1";
+		$query = $this->db->query($lastCheck)->result_array();
+		//print_r($query['no_meja']);
+		$addOne = $query[0]['no_meja'] + 1;
+		$isEmpty = "Y";
+		$add = ['no_meja' => $addOne, 'is_empty' => $isEmpty];
+		$insert = $this->db->insert("meja_tb", $add);
+
+		$this->session->set_flashdata('message','<div class="alert alert-success" role="alert">Sukses Menambahkan Meja!</div>');
+		redirect('/meja');
+
+	}
 }

@@ -67,7 +67,7 @@
               </li>
 
               <li class="nav-item">
-                <a href="<?= base_url('admin/menu'); ?>" class="nav-link">
+                <a href="<?= base_url('/meja'); ?>" class="nav-link">
                   <i class="fas fa-table nav-icon"></i>
                   <p>Kelola Meja</p>
                 </a>
