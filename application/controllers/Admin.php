@@ -9,10 +9,12 @@ class admin extends CI_Controller {
 		if(!$this->session->userdata('role_id')){
 			redirect('/');
 		}
+		elseif($this->session->userdata('role_id') == '2'){
+			redirect('/kasir');
+		}
 	}
 
-	public function dashboard(){
-
+	public function index(){
 		$data['title'] = 'Dashboard';
 		$this->load->view('template/header',$data);
 		$this->load->view('template/navbar');
@@ -20,25 +22,5 @@ class admin extends CI_Controller {
 		$this->load->view('admin/index', $data);
 		$this->load->view('template/footer');
 	}
-
-	public function menu(){
-		if($this->input->server('REQUEST_METHOD') == 'POST'){
-			$this->MMenu->insert();
-			$this->session->set_flashdata('message','<div class="alert alert-success" role="alert">Sukses Menambahkan Menu!</div>');
-			redirect('admin/menu');
-				
-		}
-		$get_menu = $this->MMenu->get_all();
-		$data = [
-				'title' => 'Menu',
-				'get_all_menu' => $get_menu
-				];
-		$this->load->view('template/header',$data);
-		$this->load->view('template/navbar');
-		$this->load->view('template/asidebar',$data);
-		$this->load->view('admin/content/menu', $data);
-		$this->load->view('template/footer');
-	}
-
 
 }
