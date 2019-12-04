@@ -16,7 +16,7 @@ class Auth extends CI_Controller {
                 $this->load->view('auth/auth');
             }
             elseif($this->session->userdata('role_id') == 1){
-                redirect('/admin/dashboard');
+                redirect('/admin/');
             }
             else{
                 redirect('/kasir');
@@ -26,23 +26,25 @@ class Auth extends CI_Controller {
     }
 
     public function cek_login(){
-    	$username = $this->input->post('username');
-    	$password = $this->input->post('password');
-    	$q = $this->db->get_where('users_tb',['username' => $username])->row_array();
-    	if($q){
-    		if(password_verify($password, $q['password'])){
-    			$data = ['username' => $q['username'], 
-    					 'role_id' => $q['role_id']];
-    			$this->session->set_userdata($data);
-    			redirect('/checkrole');
-    		}
-    		else{
-    			$this->session->set_flashdata('message','<div class="alert alert-danger" role="alert">Password Anda Salah!</div>');
-    		}
-    	}
-    	else{
-    		$this->session->set_flashdata('message','<div class="alert alert-warning" role="alert">Username Tidak Ditemukan!</div>');
-    	}
+        if($this->input->server('REQUEST_METHOD') == 'POST'){
+            $username = $this->input->post('username');
+            $password = $this->input->post('password');
+            $q = $this->db->get_where('users_tb',['username' => $username])->row_array();
+            if($q){
+                if(password_verify($password, $q['password'])){
+                    $data = ['username' => $q['username'], 
+                             'role_id' => $q['role_id']];
+                    $this->session->set_userdata($data);
+                    redirect('/checkrole');
+                }
+                else{
+                    $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert">Password Anda Salah!</div>');
+                }
+            }
+            else{
+                $this->session->set_flashdata('message','<div class="alert alert-warning" role="alert">Username Tidak Ditemukan!</div>');
+            }
+        }
     }
 
     public function logout(){
