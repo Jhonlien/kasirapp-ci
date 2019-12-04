@@ -1,5 +1,5 @@
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar elevation-4 sidebar-no-expand sidebar-light-pink">
+  <aside class="main-sidebar elevation-4 sidebar-dark-pink">
     <!-- Brand Logo -->
     <a href="../../index3.html" class="brand-link">
       <img src="<?= base_url('assets')?>/dist/img/AdminLTELogo.png"
@@ -34,7 +34,7 @@
           
           <li class="nav-item has-treeview">
             <li class="nav-header">SEKILAS</li>
-            <a href="<?= base_url('admin/dashboard'); ?>" class="nav-link active">
+            <a href="<?= base_url('/dashboard'); ?>" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -53,23 +53,23 @@
             </a>
             <ul class="nav nav-treeview menu-open">
               <li class="nav-item">
-                <a href="<?= base_url('admin/menu'); ?>" class="nav-link">
+                <a href="<?= base_url('/menu'); ?>" class="nav-link">
                   <i class="fas fa-clipboard-list nav-icon"></i>
-                  <p>List Menu</p>
+                  <p>Kelola Menu</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="<?= base_url('admin/menu'); ?>" class="nav-link">
+                <a href="<?= base_url('/user'); ?>" class="nav-link">
                   <i class="fas fa-users-cog nav-icon"></i>
-                  <p>List User</p>
+                  <p>Kelola User</p>
                 </a>
               </li>
 
               <li class="nav-item">
                 <a href="<?= base_url('admin/menu'); ?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List Meja</p>
+                  <i class="fas fa-table nav-icon"></i>
+                  <p>Kelola Meja</p>
                 </a>
               </li>
 

@@ -46,7 +46,7 @@
                       <td><?= $menu['harga']?></td>
                       <td><?= $menu['jenis']?></td>
                       <td>
-                          <a href="" class="btn btn-sm btn-outline-success"><i class="far fa-edit"></i></a>
+                          <a href="<?= base_url('menu').'/edit/'.$menu['id'] ?>" class="btn btn-sm btn-outline-success"><i class="far fa-edit"></i></a>
                           <a href="<?= base_url('menu').'/delete/'.$menu['id'] ?>" class="btn btn-sm btn-outline-danger"><i class="far fa-trash-alt"></i></a>
                       </td>
                   </tr>
