@@ -43,7 +43,7 @@
                   <tr>
                       <td><?= $no ++?></td>
                       <td><?= $menu['nama']?></td>
-                      <td><?= $menu['harga']?></td>
+                      <td><?= format_rupiah($menu['harga'])?></td>
                       <td><?= $menu['jenis']?></td>
                       <td>
                           <a href="<?= base_url('menu').'/edit/'.$menu['id'] ?>" class="btn btn-sm btn-outline-success"><i class="far fa-edit"></i></a>

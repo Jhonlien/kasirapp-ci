@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Menu extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
+		$this->load->helper('func');
 		$this->load->model('MMenu');
 		if(!$this->session->userdata('role_id')){
 			redirect('/');
