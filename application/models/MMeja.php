@@ -5,8 +5,6 @@ class MMeja extends CI_Model {
 	private $_table = 'meja_tb';
 
 	public function get_all(){
-		return $this->db->query("SELECT `meja_tb`.`*`
-								 FROM `$this->_table` 
-								 ")->result_array();
+		return $this->db->query("SELECT `meja_tb`.`*` FROM `$this->_table` ")->result_array();
 	}
 }

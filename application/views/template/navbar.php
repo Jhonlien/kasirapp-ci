@@ -1,8 +1,7 @@
-  <nav class="main-header navbar navbar-expand navbar-dark navbar-white">
-  	
+  <nav class="main-header navbar navbar-expand navbar-dark">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" style="color: pink"><i class="fas fa-bars"></i></a>
+        <a class="nav-link" data-widget="pushmenu" href="#" style=""><i class="fas fa-bars"></i></a>
       </li>
     </ul>
   </nav>

@@ -43,6 +43,5 @@ class Meja extends CI_Controller {
 
 		$this->session->set_flashdata('message','<div class="alert alert-success" role="alert">Sukses Menambahkan Meja!</div>');
 		redirect('/meja');
-
 	}
 }
