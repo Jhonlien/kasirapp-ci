@@ -14,12 +14,13 @@ class kasir extends CI_Controller {
 	}
 	public function index(){
 		$get_tables = $this->MMeja->get_all();
-		$data['title'] = "Kasir";
-
+		//print_r($get_tables);die;
+		$data = ['tables' => $get_tables, 'title' => 'Kasir'];
+		
 		$this->load->view('template/header', $data);
 		$this->load->view('template/navbar');
 		$this->load->view('template/asidebar');
-		$this->load->view('kasir/index');
+		$this->load->view('kasir/index', $data);
 		$this->load->view('template/footer');
 	}
 }
