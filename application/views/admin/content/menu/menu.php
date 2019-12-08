@@ -86,6 +86,7 @@
             </div>
             <div class="modal-body">
                <form role="form" method="POST" action="<?= base_url('/menu'); ?>">
+               <input type="hidden" value="<?= uuid(); ?>" name="uuid">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="">Nama Menu</label>

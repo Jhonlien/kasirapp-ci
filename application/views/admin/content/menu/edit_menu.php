@@ -28,15 +28,16 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
+              <?php foreach($menu as $key => $menus): ?>
               <form role="form">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="">Nama Menu</label>
-                    <input type="text" class="form-control" id="" placeholder="Nama Menu" value="<?= $menu['nama'] ?>">
+                    <input type="text" class="form-control" id="" placeholder="Nama Menu" value="<?= $menus['nama'] ?>">
                   </div>
                   <div class="form-group">
                     <label for="">Harga</label>
-                    <input type="text" class="form-control" id="" placeholder="Harga" value="<?= $menu['harga'] ?>">
+                    <input type="text" class="form-control" id="" placeholder="Harga" value="<?= $menus['harga'] ?>">
                   </div>
                  
 
@@ -47,4 +48,11 @@
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </form>
+              <?php endforeach; ?>
             </div>
+        </div>
+      </section>
+    </section>
+  </div>
+
+          

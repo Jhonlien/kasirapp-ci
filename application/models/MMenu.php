@@ -16,11 +16,13 @@ class MMenu extends CI_Model {
 	}
 
 	public function insert(){
+		$id 		= $this->input->post('uuid');
 		$nama_menu 	= $this->input->post('nama');
 		$harga 		= $this->input->post('harga');
 		$jenis_id	= $this->input->post('jenis_id');
 
 		$data = [
+					'id' => $id,
 					'nama' => $nama_menu, 
 					'harga' =>$harga, 
 					'jenis_id' => $jenis_id

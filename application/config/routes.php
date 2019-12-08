@@ -52,3 +52,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'Auth';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['dashboard-admin'] = 'admin/index';
+
+//menu-list-route
+$route['menu-list']       = 'menu/index';
+$route['menu-list-edit/(:any)']  = 'menu/$1'  ;
+
+//user-list
+$route['user-list']       = 'user/index';
+
+//meja-list
+$route['meja-list']       = 'meja/index';
